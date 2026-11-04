@@ -1,0 +1,7 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Cached Schwab bars are derived data, and large; rebuild with `python -m donchian fetch`.
+data/bars/

@@ -1,0 +1,14 @@
+# Python 3.10+ (schwab_hub_client requires it)
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pandas>=2.0
+numpy>=1.24
+pyarrow>=14
+python-dotenv>=1.0
+
+# Schwab market data comes from the local hub (../schwab_hub/run.sh); this installs its client.
+-e ../schwab_hub
+
+# tests
+pytest>=8.0
+httpx>=0.27

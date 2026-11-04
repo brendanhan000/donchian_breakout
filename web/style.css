@@ -1,0 +1,35 @@
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #0b0d10; color: #cfd3d8; font: 14px/1.4 -apple-system, Helvetica, Arial, sans-serif; }
+header { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1rem; border-bottom: 1px solid #1b1f24; flex-wrap: wrap; }
+h1 { font-size: 1rem; margin: 0; font-weight: 600; }
+h2 { font-size: 0.9rem; margin: 1rem 1rem 0.5rem; font-weight: 600; color: #9a9fa6; text-transform: uppercase; letter-spacing: 0.04em; }
+#controls, #scan-controls { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+input, select, button {
+  background: #14171b; color: #cfd3d8; border: 1px solid #2a2f36;
+  border-radius: 4px; padding: 0.35rem 0.5rem; font: inherit;
+}
+input[type="number"] { width: 4em; }
+button { cursor: pointer; }
+button:disabled { opacity: 0.5; cursor: default; }
+label { display: inline-flex; align-items: center; gap: 0.3rem; white-space: nowrap; }
+#status, #scan-status { color: #9a9fa6; font-size: 0.85rem; }
+#chart { width: 100%; height: 55vh; }
+#chart-hint { margin: 0.3rem 1rem; color: #52514e; font-size: 0.75rem; }
+#recents { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.chip {
+  background: #14171b; border: 1px solid #2a2f36; color: #cfd3d8;
+  border-radius: 999px; padding: 0.2rem 0.6rem; cursor: pointer; font-size: 0.8rem;
+}
+.chip:hover { border-color: #2a78d6; }
+#scan { padding-bottom: 1.5rem; }
+#scan-progress { margin: 0.5rem 1rem; background: #14171b; border: 1px solid #2a2f36; border-radius: 4px; height: 8px; overflow: hidden; }
+#scan-bar { height: 100%; width: 0%; background: #2a78d6; transition: width 0.2s; }
+#scan-status { display: inline-block; margin: 0 1rem 0.5rem; }
+table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+th, td { padding: 0.3rem 0.6rem; text-align: right; border-bottom: 1px solid #1b1f24; }
+th:first-child, td:first-child { text-align: left; }
+#scan-results tbody tr { cursor: pointer; }
+#scan-results tbody tr:hover { background: #14171b; }
+tr.long .dir { color: #1baf7a; }
+tr.short .dir { color: #e34948; }

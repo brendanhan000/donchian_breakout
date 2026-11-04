@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donchian Breakout</title>
+<link rel="stylesheet" href="/style.css">
+<script src="/vendor/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Donchian Breakout</h1>
+    <form id="controls">
+      <input id="symbol" maxlength="16" autocomplete="off" spellcheck="false" placeholder="SYMBOL">
+      <select id="timeframe"></select>
+      <button type="submit">Load</button>
+    </form>
+    <div id="recents"></div>
+    <span id="status"></span>
+  </header>
+
+  <div id="chart"></div>
+  <p id="chart-hint">Scroll/drag to pan and zoom &middot; double-click to fit everything loaded.</p>
+
+  <table id="events">
+    <thead>
+      <tr><th>Time</th><th>Dir</th><th>Kind</th><th>Price</th><th>Width/ATR</th><th>Vol x</th><th>Slow?</th><th>False?</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <section id="scan">
+    <h2>Scan for breakouts</h2>
+    <form id="scan-controls">
+      <select id="scan-timeframe"></select>
+      <label><input type="checkbox" id="scan-sp500" checked> S&amp;P 500</label>
+      <label><input type="checkbox" id="scan-nasdaq100" checked> Nasdaq 100</label>
+      <select id="scan-direction">
+        <option value="both">Long + short</option>
+        <option value="long">Long only</option>
+        <option value="short">Short only</option>
+      </select>
+      <select id="scan-kind">
+        <option value="close">Close breakouts</option>
+        <option value="wick">Wick breakouts</option>
+        <option value="both">Close + wick</option>
+      </select>
+      <label>Within <input type="number" id="scan-within" value="3" min="1" max="50">&nbsp;bars</label>
+      <button type="submit" id="scan-start">Scan</button>
+      <button type="button" id="scan-cancel" hidden>Cancel</button>
+    </form>
+    <div id="scan-progress"><div id="scan-bar"></div></div>
+    <span id="scan-status"></span>
+    <table id="scan-results">
+      <thead>
+        <tr><th>Symbol</th><th>Sector</th><th>Dir</th><th>Kind</th><th>Bars ago</th><th>Price</th><th>Width/ATR</th><th>Vol x</th><th>Slow?</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script src="/app.js"></script>
+</body>
+</html>
